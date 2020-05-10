@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
+/* HEX */
+$color1: #f94144ff;
+$color2: #f3722cff;
+$color3: #f8961eff;
+$color4: #f9c74fff;
+$color5: #90be6dff;
+$color6: #43aa8bff;
+$color7: #577590ff;
+
+$color1: #ff595eff;
+$color2: #ffca3aff;
+$color3: #8ac926ff;
+$color4: #1982c4ff;
+$color5: #6a4c93ff;
+
+.SbClickable{
+    display: flex;
+    border-radius: 10px;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 3%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    &:hover {
+        background-color:#565656;
+    }
+}
+
+
+.SbClickable{
+    .circleBase {
+        margin-left: 3%;
+        margin-right: 5%;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+    }
+    .text{
+        text-align: start;
+        font-family: 'Lato';
+        font-size: medium;
+        font-weight: 200;
+        color: white;
+        
+    }
+}
