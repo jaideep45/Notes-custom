@@ -10,21 +10,20 @@ class Main extends React.Component{
 
     render() {
         if (this.props.type === "list"){
+            var items = this.props.all_items;
+            var l_type = this.props.list_type;
+            var items_l = items.filter((item)=>{if ((l_type == 'All') || (l_type === item.category.name)){return true;}else{return false}});
+
+            var note_list = items_l.reverse().map((data)=><Card details = {data} />);
             return (
                 <div className = "grid">
-                    <Card details = {this.state.details} />
-                    <Card details = {this.state.details} />
-                    <Card details = {this.state.details} />
-                    <Card details = {this.state.details} />
-                    <Card details = {this.state.details} />
-                    <Card details = {this.state.details} />
-                    <Card details = {this.state.details} />
+                    {note_list}
                 </div>
             );
         }
         else if(this.props.type === "write"){
             return(
-                <Edit type="write" saveHandler = {this.props.saveHandler}/>
+                <Edit type="write" saveHandler = {this.props.saveHandler} onClose={this.props.onClose}/>
             );
         }
     }
@@ -36,19 +35,24 @@ class Card extends React.Component{
     }
     
     render() {
+        var date = new Date(this.props.details.date);
+        var years = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var date_m = day + "-" + month + "-" + years;
         return (     
             <div className = "card">
                 <div className = "cardHead">
                     <div className = "Heading">
-                        {this.props.details.heading}
+                        {this.props.details.title}
                     </div>
-                    <div className = "tag" style={{backgroundColor:this.props.details.color}}>
-                        <div className="text">{this.props.details.tag}</div>
+                    <div className = "tag" style={{backgroundColor:this.props.details.category.color}}>
+                        <div className="text">{this.props.details.category.name}</div>
                     </div>
-                </div><div className = "date"> {this.props.details.date} </div>
+                </div><div className = "date"> {date_m} </div>
                 <div className = "cardBody">
                     <div className = "cardOverlay"></div>
-                    {this.props.details.body}
+                    {this.props.details.note}
                 </div></div>);
     }
 }
@@ -70,7 +74,10 @@ class Edit extends React.Component{
         var note = this.bodyRef.current.value;
         var category = this.state.category;
         var details = {'title':title,'note':note,'category':category}
-        this.props.saveHandler(details)
+        if (title != "" && note!= ""){
+            this.props.saveHandler(details);
+        }
+        
 
     }
     
@@ -78,7 +85,7 @@ class Edit extends React.Component{
         if (this.props.type === "write"){
             return (<div className="write">
                 <div className="topBar">
-                    <div className = "close"></div>
+                    <div className = "close" onClick={this.props.onClose}></div>
                     <div className = "headingArea">
                         <input className = "headingInput" type="text" name="Title" placeholder="Title" ref = {this.headingRef}/>
                         <div className ='searchLine'></div>
@@ -87,6 +94,7 @@ class Edit extends React.Component{
                         <div className="category">
                             <div className = "circleBase" style={{backgroundColor:this.state.category.color}}></div>
                             <div className = "text">{this.state.category.name}</div>
+                            <div className = "arrow"></div>
                         </div>
                         <div className = "categories">
                             <div className = "divider-select"></div>

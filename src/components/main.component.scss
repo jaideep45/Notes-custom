@@ -10,7 +10,7 @@
     width: 80%;
     height: 100%;
     padding: 2%;
-    margin-left: 300px;
+    margin-left: 250px;
 }
 
 .card{
@@ -107,12 +107,12 @@
     position: relative;
     width: 80%;
     height: 100%;
-    margin-left: 300px;
+    margin-left: 250px;
 
     .topBar{
         display: flex;
         flex-direction: row;
-        padding:10px;
+        padding:20px;
         align-items: flex-start;
         
         .close{
@@ -199,7 +199,7 @@
     .bodyInput{
         position: absolute;
         margin-top: 98px;
-        margin-left: 75px;
+        margin-left: 85px;
         height:80%;
         width:400px;
         overflow: auto; 
@@ -241,6 +241,14 @@
     border-radius: 10px;
     flex-direction: row;
     transition: 0.2s ease;
+    .arrow{
+        background-image: url('../down-arrow.svg');
+        width:10px;
+        height:10px;
+        position: absolute;
+        right: 20px;
+        opacity:30%;
+    }
     .circleBase {
         border-style: solid;
         border-width: 1px;
