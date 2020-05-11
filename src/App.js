@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Sidebar from './components/sidebar.component.jsx'
+import Control from './components/control.component.jsx'
 
 function App() {
   return (
-    <div className="App">
-       <Sidebar selected = "default"/>
+    <div className="Control">
+       <Control />
     </div>
   );
 }
