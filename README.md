@@ -1,3 +1,8 @@
+ <div align="center">
+    <img src="/screenshot1.png" width="600px"</img> 
+    <img src="/screenshot2.png" width="600px"</img> 
+</div>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
