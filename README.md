@@ -1,6 +1,8 @@
+ A simple app to create and retrieve notes.
+ 
  <div align="center">
-    <img src="/screenshot1.png" width="600px"</img> 
-    <img src="/screenshot2.png" width="600px"</img> 
+    <img src="/notes-2.png" width="600px"</img> 
+    <img src="/notes-1.png" width="600px"</img> 
 </div>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
