@@ -16,6 +16,7 @@ $color3: #8ac926ff;
 $color4: #1982c4ff;
 $color5: #6a4c93ff;
 
+
 .SbClickable{
     display: flex;
     border-radius: 10px;
@@ -26,13 +27,6 @@ $color5: #6a4c93ff;
     margin-bottom: 3%;
     padding-bottom: 3%;
     padding-top: 3%;
-    &:hover {
-        background-color:#565656;
-    }
-}
-
-
-.SbClickable{
     .circleBase {
         margin-left: 3%;
         margin-right: 5%;
@@ -48,4 +42,5 @@ $color5: #6a4c93ff;
         color: #E5E5E5;
         
     }
+    
 }
